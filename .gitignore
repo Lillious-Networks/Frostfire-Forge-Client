@@ -44,3 +44,5 @@ assets/spritesheets/*
 !assets/spritesheets/frostfire-player.png
 
 .vscode/
+
+/out

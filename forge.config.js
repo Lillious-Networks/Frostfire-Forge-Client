@@ -3,7 +3,10 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 
 module.exports = {
   packagerConfig: {
+    name: 'Frostfire Forge Client',
     asar: true,
+    osxSign: {},
+    appCategoryType: 'public.app-category.developer-tools'
   },
   rebuildConfig: {},
   makers: [
