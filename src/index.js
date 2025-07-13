@@ -31,7 +31,9 @@ async function init() {
       title: "Frostfire Forge Client"
     });
 
-    win.loadURL(gameUrl);
+    win.loadURL(gameUrl, {
+      userAgent: '@Electron/Frostfire-Forge-Client'
+    });
   };
 
   app.whenReady().then(() => {
