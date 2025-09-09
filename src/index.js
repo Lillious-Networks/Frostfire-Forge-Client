@@ -1,5 +1,5 @@
 const { app, BrowserWindow, dialog } = require('electron');
-const gameUrl = 'http://beta.forge.lillious.com';
+const gameUrl = 'https://forge.lillious.com';
 
 async function init() {
   try {
@@ -13,9 +13,11 @@ async function init() {
       return;
     }
   } catch (error) {
-    dialog.showErrorBox('Error', 'Failed to connect to the game server. Please try again later.');
-    app.quit();
-    return;
+    if (error?.cause?.code?.toString() != "UNABLE_TO_VERIFY_LEAF_SIGNATURE") {
+      dialog.showErrorBox('Error', 'Failed to connect to the game server. Please try again later.');
+      app.quit();
+      return;
+    }
   }
 
   const createWindow = () => {
